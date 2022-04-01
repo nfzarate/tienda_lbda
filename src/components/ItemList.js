@@ -22,16 +22,4 @@ const element = items.map(it =>{
 }
 
 
-export default ItemList
-
-
-/* const element = items.map(it =>{ */
-/*     return( */
-/*         <div key={it.id} className="boxItem"> */
-{/*             <img src={it.pictureUrl} alt="fotoItem" className="fotoItem"/> */}
-{/*             <p>{it.title}</p> */}
-{/*             <p>${it.price}</p> */}
-{/*             <button class="btnDetalles">Detalles</button> */}
-{/*         </div> */}
-/*     ) */
-/* }) */
+export default ItemList;
