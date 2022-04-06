@@ -1,14 +1,11 @@
 import ItemCount from "./ItemCount";
 import ItemList from "./ItemList";
+import {listaProductos} from "../mock/listaProductos"
 import { useEffect , useState } from "react";
 import ClipLoader from "react-spinners/ClipLoader";
 import "../css/ItemListContainer.css"
+import { useParams } from "react-router-dom";
 
-const listaProductos = [
-    {id: 1, title: "Aersosol Saphirus", description: "Aerosol Aromatizador", price:250, pictureUrl: "https://tiendasaphirus.com.ar/wp-content/uploads/2020/11/aerosol_limon-600x600.jpg"},
-    {id: 2, title: "Aerosol Ambar", description: "Aerosol Aromatizador", price:200, pictureUrl: "https://tiendasaphirus.com.ar/wp-content/uploads/2020/11/limon-latas-ambar-600x600.jpg"},
-    {id: 3, title: "Aromatizador Textil", description: "Aromatizador para telas", price:150, pictureUrl: "https://tiendasaphirus.com.ar/wp-content/uploads/2020/11/textil_bebe-600x600.jpg"},
-];
 
 const promesa = new Promise ((res,rej)=>{
     setTimeout(() => {
@@ -24,11 +21,16 @@ const ItemListContainer = ({greeting}) => {
     const [productos,setProductos] = useState([]);
     const [loading, setLoading] = useState(true);
 
+    const {categoryId} = useParams();
+
 
     useEffect(()=>{
         
         promesa.then((productos)=>{
-            setProductos(productos)
+           if(categoryId){
+          setProductos(productos.filter(p=>p.categoria == categoryId))}
+
+          else{setProductos(productos)}
         })
        .catch(()=>{
            console.log("error");
@@ -36,7 +38,7 @@ const ItemListContainer = ({greeting}) => {
        .finally(() => {
         setLoading(false);
         });
-    },[]);
+    },[categoryId]);
 
 
 
