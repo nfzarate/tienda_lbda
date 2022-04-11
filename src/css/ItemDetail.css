@@ -16,3 +16,21 @@
     margin-top: 50px;
     font-family: 'Montserrat', sans-serif;
 }
+
+.btn-finalizar {
+padding: 8px;
+margin: 10px;
+font-family: "Montserrat", sans-serif;
+border-radius: 3px;
+border: solid 1px;
+background-color: rgb(235, 57, 211);
+color: #ffff;
+font-size: 15px;
+}
+
+.btn-finalizar:hover{
+cursor: pointer;
+background-color: rgb(46, 44, 44);
+color: #ffff;
+transition: 0.2s;
+}

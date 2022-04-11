@@ -1,4 +1,3 @@
-import ItemCount from "./ItemCount";
 import ItemList from "./ItemList";
 import {listaProductos} from "../mock/listaProductos"
 import { useEffect , useState } from "react";
@@ -41,12 +40,6 @@ const ItemListContainer = ({greeting}) => {
     },[categoryId]);
 
 
-
-    const onAdd = (e)=> {
-        alert(`Agregaste ${e} productos al carrito`)
-    }
-
-
     return (
         <>
         <h2>{greeting}</h2>
@@ -58,7 +51,6 @@ const ItemListContainer = ({greeting}) => {
         </div>)
         :(<ItemList items={productos}/>)
         }
-        {/* <ItemCount stock={10} initial={1} onAdd={onAdd} /> */}
         </>
     )
 }

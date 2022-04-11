@@ -1,8 +1,18 @@
-import React from 'react'
+import React, {useState}  from 'react'
 import "../css/ItemDetail.css"
 import ItemCount from "./ItemCount";
+import { Link } from "react-router-dom";
 
 const ItemDetail = ({producto}) => {
+
+  const [finalizado,setFinalizado] = useState (false);
+  const [count,setCount] = useState (0)
+
+  const onAdd = (contador) =>{
+
+    setFinalizado(true)
+    setCount(contador)
+  }
 
   return (
       <>
@@ -14,6 +24,12 @@ const ItemDetail = ({producto}) => {
             <div className="Description">
                 <h3>Descripción</h3>
                 {producto.description}
+                <p>Stock disponible: {producto.stock}</p>
+                {!finalizado
+                ?(<ItemCount stock={producto.stock} initial={1} onAdd={onAdd} />)
+                :(<Link to="/cart">
+                <button className="btn-finalizar">Finalizar Compra</button>
+                </Link>)}
             </div>
         </div>
     </div>

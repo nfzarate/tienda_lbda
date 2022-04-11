@@ -2,7 +2,7 @@
   border-radius: 5px;
   background-color: rgba(212, 209, 209, 0.39);
   width: 40vh;
-  height: 20vh;
+  height: 18vh;
   display: flex;
   flex-direction: column;
   justify-content: end;
@@ -32,10 +32,10 @@
   padding: 5px;
   margin: 10px;
   font-family: "Montserrat", sans-serif;
-  font-weight: bold;
   border-radius: 3px;
   border: solid 1px;
-  background-color: #ffff;
+  background-color: rgb(235, 57, 211);
+  color: #ffff;
 }
 
 .btnAddCart:hover {

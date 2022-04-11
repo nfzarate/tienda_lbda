@@ -24,7 +24,7 @@ const ItemDetailContainer = () => {
     promesa.then((producto)=>{
       
         setProducto(producto.find(p=>p.idProducto == id))
-        console.log(producto);
+        //console.log(producto);
     })
    .catch(()=>{
        console.log("error");

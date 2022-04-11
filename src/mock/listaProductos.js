@@ -5,6 +5,7 @@ export const listaProductos = [
     description: "Aerosol Aromatizador",
     categoria: "hogar",
     price: 250,
+    stock:10,
     pictureUrl:
       "https://tiendasaphirus.com.ar/wp-content/uploads/2020/11/aerosol_limon-600x600.jpg",
   },
@@ -14,6 +15,7 @@ export const listaProductos = [
     description: "Aerosol Aromatizador",
     categoria: "hogar",
     price: 200,
+    stock:8,
     pictureUrl:
       "https://tiendasaphirus.com.ar/wp-content/uploads/2020/11/limon-latas-ambar-600x600.jpg",
   },
@@ -23,6 +25,7 @@ export const listaProductos = [
     description: "Aromatizador para telas",
     categoria: "hogar",
     price: 150,
+    stock:12,
     pictureUrl:
       "https://tiendasaphirus.com.ar/wp-content/uploads/2020/11/textil_bebe-600x600.jpg",
   },
@@ -32,6 +35,7 @@ export const listaProductos = [
     description: "Fragancia Masculina - Alternativa olfativa One Million",
     categoria: "linea-Milano",
     price: 1.235,
+    stock:14,
     pictureUrl:
       "https://tiendasaphirus.com.ar/wp-content/uploads/2020/11/Perfume-205-oml-300x300.jpg",
   },
@@ -41,6 +45,7 @@ export const listaProductos = [
     description: "Fragancia Masculina - Alternativa olfativa Invictus",
     categoria: "linea-Milano",
     price: 1.235,
+    stock:18,
     pictureUrl:
       "https://tiendasaphirus.com.ar/wp-content/uploads/2020/11/Perfume-204-inv-300x300.jpg",
   },
@@ -51,6 +56,7 @@ export const listaProductos = [
       "Explosivo mix cítrico fresco, con una salida de cascara de naranja y limón verde apoyado en un corazón floral a base de jazmín. El fondo almizclado ayuda a resaltar las notas frescas del perfume. Contenido: 2 unidades.",
     categoria: "automovil",
     price: 216,
+    stock:20,
     pictureUrl:
       "https://tiendasaphirus.com.ar/wp-content/uploads/2020/11/citrus-route-600x600.jpg",
   },
@@ -60,6 +66,7 @@ export const listaProductos = [
     description: "Explosivo mix cítrico fresco, con una salida de cascara de naranja y limón verde apoyado en un corazón floral a base de jazmín. El fondo almizclado ayuda a resaltar las notas frescas del perfume. Contenido: 4 unidades.",
     categoria: "automovil",
     price: 216,
+    stock:22,
     pictureUrl:
       "https://tiendasaphirus.com.ar/wp-content/uploads/2020/11/carita-limalimon-300x300.jpg",
   },
@@ -69,6 +76,7 @@ export const listaProductos = [
     description: "Fragancia cítrica verde, muy fresca, con toques de flor de naranja.",
     categoria: "automovil",
     price: 192,
+    stock:25,
     pictureUrl:
       "https://tiendasaphirus.com.ar/wp-content/uploads/2020/11/limon-mini-600x600.jpg",
   },
@@ -78,6 +86,7 @@ export const listaProductos = [
     description: "Fragancia cítrica verde, muy fresca, con toques de flor de naranja.",
     categoria: "automovil",
     price: 613,
+    stock:26,
     pictureUrl:
       "https://tiendasaphirus.com.ar/wp-content/uploads/2021/04/latita-auto-limon-300x300.png",
   },
@@ -87,6 +96,7 @@ export const listaProductos = [
     description: "Explosivo mix cítrico fresco, con una salida de cáscara de naranja y limón verde apoyado en un corazón floral a base de jazmín.",
     categoria: "automovil",
     price: 284,
+    stock:18,
     pictureUrl:
       "https://tiendasaphirus.com.ar/wp-content/uploads/2020/11/sensaciones-citrico-300x300.jpg",
   },
@@ -96,6 +106,7 @@ export const listaProductos = [
     description: "El AGUA MICELAR está formada por un grupo de moléculas que atraen la suciedad dejando la piel del rostro limpia, humectada y tonificada en una sola pasada. Limpieza Facial 6 en 1.",
     categoria: "linea-Milano",
     price: 770,
+    stock:15,
     pictureUrl:
       "https://tiendasaphirus.com.ar/wp-content/uploads/2020/11/agua-micelar-300x300.jpg",
   },
@@ -105,6 +116,7 @@ export const listaProductos = [
     description: "Fragancia Femenina - Alternativa olfativa La Vida es Bella",
     categoria: "linea-Milano",
     price: 1.235,
+    stock:16,
     pictureUrl:
       "https://tiendasaphirus.com.ar/wp-content/uploads/2020/11/Perfume-507-vdb-300x300.jpg",
   },
@@ -114,6 +126,7 @@ export const listaProductos = [
     description: "Fragancia Femenina - Alternativa olfativa Armani Si",
     categoria: "linea-Milano",
     price: 1.235,
+    stock:10,
     pictureUrl:
       "https://tiendasaphirus.com.ar/wp-content/uploads/2020/11/Perfume-513-si-600x600.jpg",
   },
@@ -124,6 +137,7 @@ export const listaProductos = [
       "Fragancia cítrica verde, muy fresca, con toques de flor de naranja.",
     categoria: "hogar",
     price: 358,
+    stock:12,
     pictureUrl:
       "https://tiendasaphirus.com.ar/wp-content/uploads/2020/11/difusor_limon-300x300.jpg",
   },
@@ -133,6 +147,7 @@ export const listaProductos = [
     description: "Fragancia cítrica verde, muy fresca, con toques de flor de naranja.", 
     categoria: "hogar",
     price: 803,
+    stock:19,
     pictureUrl:
       "https://tiendasaphirus.com.ar/wp-content/uploads/2021/06/difusor-premium-lemonpeel-01-017-300x300.jpg",
   },
@@ -142,6 +157,7 @@ export const listaProductos = [
     description: "Embriagadora fragancia amaderada con mezcla de notas balsámicas y orientales que energiza y sorprende.",
     categoria: "hogar",
     price: 198,
+    stock:10,
     pictureUrl:
       "https://tiendasaphirus.com.ar/wp-content/uploads/2020/11/sahumerios-palosanto-300x300.jpg",
   },
@@ -151,6 +167,7 @@ export const listaProductos = [
     description: "Aroma de notas cítricas, herbales y marinas donde se destacan las flores de azahar, las hierbas recién cortadas y la frescura de las olas del mar. Contenido: 4 unidades.", 
     categoria: "automovil",
     price: 216,
+    stock:25,
     pictureUrl:
       "https://tiendasaphirus.com.ar/wp-content/uploads/2020/11/carita-aqua-600x600.jpg",
   },
@@ -160,6 +177,7 @@ export const listaProductos = [
     description: "Formulado con materias primas de la más alta calidad y una delicada fragancia, el jabón líquido Milano ayuda a mantener diariamente la hidratación y suavidad de tu piel.",
     categoria: "linea-Milano",
     price: 271,
+    stock:13,
     pictureUrl:
       "https://tiendasaphirus.com.ar/wp-content/uploads/2020/11/jabon-citrico-2-300x300.jpg",
   },
