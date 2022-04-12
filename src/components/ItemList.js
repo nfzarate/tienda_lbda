@@ -13,7 +13,7 @@ const element = items.map(it =>{
             <p>{it.title}</p>
             <p>${it.price}</p>
             <Link to={`/item/${it.idProducto}`}>
-            <button class="btnDetalles">Detalles</button>
+            <button className="btnDetalles">Detalles</button>
             </Link>
         </div>
     )

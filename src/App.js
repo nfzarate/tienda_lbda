@@ -6,6 +6,7 @@ import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import {Cart} from "./components/Cart";
 import {Error} from "./components/Error";
+import CustomProvider from './context/CartContext';
 
 const App = () => {
 
@@ -14,6 +15,9 @@ const App = () => {
   return (
     <>
     < BrowserRouter>
+
+      <CustomProvider>
+
       <NavBar/>
 
       <Routes>
@@ -25,7 +29,9 @@ const App = () => {
         <Route path="#" element={<Error/>}/>
 
       </Routes>
-      
+
+      </CustomProvider>
+  
     </BrowserRouter>
     </>
   );
