@@ -1,9 +1,22 @@
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import Badge from '@mui/material/Badge';
+import {contexto} from '../context/CartContext';
+import React, {useContext,useEffect} from 'react';
+
 
 const CartWidget = () => {
-    return (
-    <ShoppingCartIcon className="btn-cart" fontSize="large" color="action"/>
-    )
-}
 
+    const {cartItems,getCantidadItems,cart} = useContext(contexto)
+
+    useEffect(()=>{
+        getCantidadItems()
+    },[cart])
+
+    return (
+        
+        <Badge className="badge" badgeContent={cartItems} color="secondary" fontSize="large">
+          <ShoppingCartIcon className='btn-cart' color="action" fontSize="large"/>
+        </Badge>
+    );
+}
 export default CartWidget;

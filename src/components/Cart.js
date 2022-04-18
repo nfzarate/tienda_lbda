@@ -1,16 +1,72 @@
 
 import {contexto} from '../context/CartContext'
-import React, {useState,useContext} from 'react'
+import React, {useEffect,useContext,useState} from 'react'
+import '../css/cart.css'
+import {Link } from "react-router-dom";
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 
 export const Cart = () => {
 
-  const {clearCart,cart} = useContext(contexto);
+  const {clearCart,cart,deleteItem,total,calcularTotal} = useContext(contexto);
+
+
+  useEffect(()=>{
+    calcularTotal()
+  },[cart])
+
 
   return (
-    <>
-    <h1>Soy Cart</h1>
-    <button onClick={clearCart}>Vaciar Carrito</button>
-    </>
-  )
-}
+  <>  
+    {
+      cart.length
+      
+      ? 
 
+      (
+      <>
+  
+      {cart.map((product)=>(
+      <>
+      <div key={product.idProducto}>
+      <h4 className="productTitle">{product.title}</h4>
+      <div className="divProducto">
+        <img src={product.pictureUrl}></img>
+        <div>
+          
+          <h4>Cantidad: {product.qty}</h4>
+          <h4>Precio: ${product.price}</h4>
+          <h4>Subotal: ${product.qty*product.price}</h4>
+        </div>
+        <button className="delete-btn" onClick={()=>{deleteItem(product.idProducto)}}><DeleteOutlineIcon fontSize="medium"/></button>
+      </div>
+      </div>
+      </>
+      ))}
+
+      <div className="pieCarrito">
+         <button onClick={clearCart} className="vaciar-btn">Vaciar Carrito</button>
+         <h4>Total: ${total} </h4>
+      </div>
+
+      </>
+
+      )
+      
+      : 
+
+      (
+        <>
+        <div className="divCarritoVacio">
+          <h2>¡No hay productos agregados al carrito!</h2>
+          <Link to="/"><button className="btn-agregar">Agregar productos</button></Link>
+        </div>
+        </>
+
+      )      
+
+    }
+  </>
+      
+)
+
+}

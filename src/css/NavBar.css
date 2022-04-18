@@ -45,11 +45,12 @@ a{
     font-family: 'Montserrat', sans-serif;
 }
 
-.btn-cart{
-    margin-right: 30px;
-}
 
 .btn-cart:hover{
     cursor:pointer
 }
 
+.badge{
+    margin-right: 20px;
+    }
+    

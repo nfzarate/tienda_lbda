@@ -10,6 +10,11 @@ const CustomProvider = ({children}) =>{
 
     const [cart, setCart] = useState([])
 
+    const[total,setTotal] = useState(0);
+
+    const[cartItems,setCartItems] = useState(0);
+
+
     const addItem = (product, qty)=>{
         const newProduct = {
             ...product,qty
@@ -26,8 +31,8 @@ const CustomProvider = ({children}) =>{
     }
 
     const deleteItem  = (id)=>{
-        const cartFiltered = [cart.filter(x=>x.idProducto !== id)]
-        setCart([...cart,cartFiltered])
+        let cartFiltered = cart.filter(x=>x.idProducto !== id)
+        setCart(cartFiltered)
     }
 
     const isInCart = (id) =>{
@@ -35,17 +40,34 @@ const CustomProvider = ({children}) =>{
        return true
     }
 
-    const getcantidadItems = (e) => {
-       console.log(e.length);
+    const getCantidadItems = () => {
+        let cantidadItems=0
+        cart.forEach((e)=> {cantidadItems += e.qty
+        })
+        setCartItems(cantidadItems)
     }
+
+    
+
+    const calcularTotal = ()=>{
+            let acumulador= 0
+            cart.forEach((x)=>{
+              acumulador += x.price * x.qty;
+            })
+            setTotal(acumulador)
+         }
+
 
     const clearCart = ()=> {
         setCart([])
+        setTotal(0)
+        setCartItems(0);
     }
 
 
+
 return (
-<Provider value={{cart,addItem,deleteItem,getcantidadItems,clearCart,isInCart}}>
+<Provider value={{cart,total,cartItems,addItem,deleteItem,getCantidadItems,clearCart,isInCart,calcularTotal}}>
     {children}
 </Provider>
 );
@@ -53,3 +75,8 @@ return (
 }
 
 export default CustomProvider;
+
+
+
+
+

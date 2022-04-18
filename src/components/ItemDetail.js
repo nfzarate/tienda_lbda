@@ -9,7 +9,7 @@ const ItemDetail = ({producto}) => {
   const {addItem} = useContext(contexto);
 
   const [finalizado,setFinalizado] = useState (false);
-  //const [count,setCount] = useState (0)
+  
 
   const onAdd = (contador) =>{
 
