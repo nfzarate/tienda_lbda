@@ -1,17 +1,10 @@
 import ItemList from "./ItemList";
-import {listaProductos} from "../mock/listaProductos"
 import { useEffect , useState } from "react";
 import ClipLoader from "react-spinners/ClipLoader";
 import "../css/ItemListContainer.css"
 import { useParams } from "react-router-dom";
-
-
-const promesa = new Promise ((res,rej)=>{
-    setTimeout(() => {
-        res(listaProductos)
-    },2000);
-})
-
+import {db} from "../firebase/firebase";
+import {getDocs,collection,query,where} from "firebase/firestore";
 
 
 const ItemListContainer = ({greeting}) => {
@@ -25,18 +18,33 @@ const ItemListContainer = ({greeting}) => {
 
     useEffect(()=>{
         
-        promesa.then((productos)=>{
-           if(categoryId){
-          setProductos(productos.filter(p=>p.categoria == categoryId))}
+        const itemCollection = collection(db,"ItemCollection")
+        
+        let q;
 
-          else{setProductos(productos)}
+        categoryId
+        ? q = query(itemCollection,where("categoria", "==", categoryId))
+        : q = collection(db,"ItemCollection")
+
+        getDocs(q)
+        .then((result)=>{
+            const docs= result.docs
+            const lista = docs.map(p=>{
+                const id = p.id
+                const producto = {
+                    id,
+                    ...p.data()}
+
+                return producto
+            });
+            setProductos(lista);
         })
-       .catch(()=>{
-           console.log("error");
-       })
-       .finally(() => {
-        setLoading(false);
-        });
+        .catch(()=>{
+            console.log("error")})
+
+        .finally(() => {
+                setLoading(false);
+            })
     },[categoryId]);
 
 

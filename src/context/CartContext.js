@@ -19,8 +19,8 @@ const CustomProvider = ({children}) =>{
         const newProduct = {
             ...product,qty
         };
-        if(isInCart(product.idProducto)){
-            const productFind = cart.find(x=>x.idProducto === newProduct.idProducto);
+        if(isInCart(product.id)){
+            const productFind = cart.find(x=>x.id === newProduct.id);
             const index= cart.indexOf(productFind);
             const copy = [...cart];
             copy[index].qty += qty;
@@ -31,12 +31,12 @@ const CustomProvider = ({children}) =>{
     }
 
     const deleteItem  = (id)=>{
-        let cartFiltered = cart.filter(x=>x.idProducto !== id)
+        let cartFiltered = cart.filter(x=>x.id !== id)
         setCart(cartFiltered)
     }
 
     const isInCart = (id) =>{
-       if(cart.find(x=>x.idProducto === id))
+       if(cart.find(x=>x.id === id))
        return true
     }
 

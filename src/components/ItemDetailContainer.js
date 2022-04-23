@@ -1,38 +1,55 @@
 import React from 'react'
-import { listaProductos } from '../mock/listaProductos';
+import ClipLoader from "react-spinners/ClipLoader";
 import ItemDetail from './ItemDetail';
+import "../css/ItemListContainer.css"
 import { useEffect , useState } from "react";
 import {useParams} from "react-router-dom";
-
-
-    
- const promesa = new Promise ((res,rej)=>{
-        setTimeout(() => {
-            res(listaProductos)
-        },2000);
-    })
+import {db} from "../firebase/firebase";
+import {doc,getDoc,collection} from "firebase/firestore"
 
 
 const ItemDetailContainer = () => {
 
   const [producto,setProducto] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const {id} = useParams();
 
   useEffect(()=>{
-    
-    promesa.then((producto)=>{
-      
-        setProducto(producto.find(p=>p.idProducto == id))
+
+    const itemCollection = collection(db,"ItemCollection")
+    const refDoc = doc(itemCollection,id)
+    getDoc(refDoc)
+    .then((result)=>{
+      const item = {
+        id,
+        ...result.data()
+      }
+      setProducto(item);
     })
    .catch(()=>{
        console.log("error");
    })
+   .finally(() => {
+    setLoading(false);
+})
+
 },[id]);
 
   return (
     <>
-    <ItemDetail producto={producto}/>
+
+    {loading
+
+    ?(<div className="divPadre">
+        <div className="divHijo">
+        <ClipLoader color={" rgb(235, 57, 211)"} loading={loading} size={100}/>
+        </div>
+      </div>)
+
+    :<ItemDetail producto={producto}/>
+    }
+
     </>
   )
 }
