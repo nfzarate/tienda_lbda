@@ -1,0 +1,67 @@
+
+.divContainer{
+    display: flex;
+flex-direction:column;
+align-items: center;
+align-content:center;
+}
+
+.formularioCompra{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    align-content:center;
+}
+
+.formulario{
+  width: 400px;
+  height: 375px;
+  margin: auto;
+  background-color: #ff66c4;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  border-radius: 7px;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 100px;
+  margin-top: 25px;
+   
+}
+
+.formularioCompra input, .formularioCompra textarea {
+    width: 100%;
+    margin-bottom: 25px;
+    padding: 7px;
+    box-sizing: border-box;
+    font-size: 14px;
+    border: none;
+}
+
+.formularioCompra textarea {
+    min-height: 100px;
+    max-height: 200px;
+    max-width: 100%; 
+}
+
+.formularioCompra label{
+    color: #ffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+#btn-enviarPedido{
+    background-color: rgb(46, 44, 44);
+    color: #ffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+#btn-enviarPedido:hover{
+    cursor:pointer;
+}
+
+
+
+
+
