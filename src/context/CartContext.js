@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState,useEffect } from "react";
 
 
 
@@ -40,34 +40,39 @@ const CustomProvider = ({children}) =>{
        return true
     }
 
+    useEffect(()=>{
     const getCantidadItems = () => {
         let cantidadItems=0
         cart.forEach((e)=> {cantidadItems += e.qty
         })
         setCartItems(cantidadItems)
-    }
+    };
+    getCantidadItems();
+    },[cart])
 
     
-
+    useEffect(()=>{
     const calcularTotal = ()=>{
             let acumulador= 0
             cart.forEach((x)=>{
               acumulador += x.price * x.qty;
             })
             setTotal(acumulador)
-         }
+        };
+        calcularTotal();
+    },[cart])
 
 
     const clearCart = ()=> {
         setCart([])
         setTotal(0)
-        setCartItems(0);
+        setCartItems(0)
     }
 
 
 
 return (
-<Provider value={{cart,total,cartItems,addItem,deleteItem,getCantidadItems,clearCart,isInCart,calcularTotal}}>
+<Provider value={{cart,total,cartItems,addItem,deleteItem,clearCart,isInCart}}>
     {children}
 </Provider>
 );

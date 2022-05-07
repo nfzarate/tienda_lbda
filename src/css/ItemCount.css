@@ -5,7 +5,7 @@
   height: 18vh;
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  justify-content:flex-end;
   font-family: "Montserrat", sans-serif;
 }
 

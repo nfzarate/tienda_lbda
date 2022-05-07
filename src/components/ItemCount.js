@@ -1,7 +1,7 @@
+import { useState } from "react";
 import "../css/ItemCount.css";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
-import { useState } from "react";
 
 const ItemCount = ({ stock, initial, onAdd }) => {
     
@@ -23,7 +23,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
 
 
   return (
-    <>
+    
       <div className="counterBox">
         <div className="counter">
           <button onClick={restarItem}><RemoveIcon fontSize="small" /></button>
@@ -32,8 +32,9 @@ const ItemCount = ({ stock, initial, onAdd }) => {
         </div>
         <button onClick={agregarAlCarrito} className="btnAddCart">Agregar al carrito</button>
       </div>
-    </>
+    
   );
+  
 };
 
 export default ItemCount;

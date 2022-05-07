@@ -1,6 +1,31 @@
-.contenedor{
-    display: flex;
-    flex-direction: row;
-    justify-content:space-evenly;
-    flex-wrap: wrap;
+.fotoItem {
+    width: 200px;
+    height: 200px;
+}
+
+.boxItem { 
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    margin: 20px 10px;
+}
+
+.btnDetalles{
+    padding: 8px;
+    margin: 10px;
+    font-family: "Montserrat", sans-serif;
+    border-radius: 3px;
+    border: solid 1px;
+    background-color: rgb(235, 57, 211);
+    color: #ffff;
+    font-size: 15px;
+}
+
+.btnDetalles:hover {
+cursor: pointer;
+background-color: rgb(46, 44, 44);
+color: #ffff;
+transition: 0.2s;
 }

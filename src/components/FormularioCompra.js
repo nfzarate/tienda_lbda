@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import '../css/formularioCompra.css';
 
-export const FormularioCompra = ({enviarPedido,IdVenta}) => {
+export const FormularioCompra = ({enviarPedido}) => {
 
   const [comprador, setComprador] = useState({
     nombre: "",

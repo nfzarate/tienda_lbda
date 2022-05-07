@@ -1,30 +1,23 @@
 
-import {contexto} from '../context/CartContext'
-import React, {useEffect,useContext,useState} from 'react'
+import {contexto} from '../context/CartContext';
+import {FormularioCompra} from "./FormularioCompra";
+import React, {useContext,useState} from 'react';
 import '../css/cart.css'
 import {Link } from "react-router-dom";
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import {addDoc,collection,serverTimestamp,updateDoc, doc} from "firebase/firestore";
 import {db} from "../firebase/firebase";
-import {FormularioCompra} from "./FormularioCompra";
+
 
 export const Cart = () => {
 
-  const {clearCart,cart,deleteItem,total,calcularTotal} = useContext(contexto);
-
+  const {clearCart,cart,deleteItem,total} = useContext(contexto);
   const ventaCollection = collection(db, "ventas");
+  
   const [finalizar, setFinalizar] = useState(false);
   const [IdVenta, setIdVenta] = useState('');
   const [mostrarId,setMostrarId] = useState(false);
-  
 
-  useEffect(()=>{
-    calcularTotal()
-  },[cart])
-
-  
-  
-  
 
   const mostrarFormulario = ()=>{
     setFinalizar(true);
@@ -56,7 +49,6 @@ const enviarPedido = (comprador) => {
   
 }
 
-
   return (
   <>  
     {
@@ -64,7 +56,7 @@ const enviarPedido = (comprador) => {
       
       ? 
 
-      (
+      
       <>
   
       {cart.map((product)=>(
@@ -91,19 +83,15 @@ const enviarPedido = (comprador) => {
 
       </>
 
-      )
-      
       : 
 
-      (
-        <>
-        <div className="divCarritoVacio">
-          <h2>¡No hay productos agregados al carrito!</h2>
-          <Link to="/"><button className="btn-agregar">Agregar productos</button></Link>
-        </div>
-        </>
+        
+      <div className="divCarritoVacio">
+        <h2>¡No hay productos agregados al carrito!</h2>
+        <Link to="/"><button className="btn-agregar">Agregar productos</button></Link>
+      </div>
+        
 
-      )
     }
       
 
@@ -117,15 +105,14 @@ const enviarPedido = (comprador) => {
       mostrarId &&
       
       <div className="idContainer">
-      <h3>¡Tu pedido se ha generado con éxito!</h3>
-      <h4> ID: {IdVenta}</h4>
-      <Link to="/">
-      <button className="btn-idAceptar">Aceptar</button>
-      </Link>
+        <h3>¡Tu pedido se ha generado con éxito!</h3>
+        <h4> ID: {IdVenta}</h4>
+        <Link to="/">
+          <button className="btn-idAceptar">Aceptar</button>
+        </Link>
       </div>
       
     }
-
 
   </>
       

@@ -1,12 +1,10 @@
-//Navigate
-import { BrowserRouter,Routes,Route } from "react-router-dom";
-//Componentes
 import NavBar from "./components/NavBar";
 import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import {Cart} from "./components/Cart";
 import {Error} from "./components/Error";
 import CustomProvider from './context/CartContext';
+import { BrowserRouter,Routes,Route } from "react-router-dom";
 
 const App = () => {
 

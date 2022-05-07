@@ -17,7 +17,7 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-.btn-finalizar {
+.btn-carrito,.btn-seguir {
 padding: 8px;
 margin: 10px;
 font-family: "Montserrat", sans-serif;
@@ -28,7 +28,7 @@ color: #ffff;
 font-size: 15px;
 }
 
-.btn-finalizar:hover{
+.btn-carrito:hover,.btn-seguir:hover{
 cursor: pointer;
 background-color: rgb(46, 44, 44);
 color: #ffff;
