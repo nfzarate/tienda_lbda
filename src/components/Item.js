@@ -5,7 +5,7 @@ const Item = ({ item }) => {
 
   return (
 
-  <div key={item.id} className="boxItem">
+  <div className="boxItem">
 
     <img src={item.pictureUrl} alt="fotoItem" className="fotoItem"/>
     <p>{item.title}</p>

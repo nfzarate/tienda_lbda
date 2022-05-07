@@ -36,7 +36,7 @@
 .vaciar-btn{
     margin: 10px 25px;
 }
-.vaciar-btn:hover,.btn-agregar:hover{
+.vaciar-btn:hover,.btn-agregar:hover,.btn-finalizar:hover{
 cursor: pointer;
 background-color: rgb(46, 44, 44);
 color: #ffff;

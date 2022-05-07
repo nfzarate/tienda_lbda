@@ -9,10 +9,10 @@ const ItemList = ({items}) => {
     return(
 
         <div className="contenedor">
-            
+
             {items.map((it) => (
 
-                <Item item={it}/>
+                <Item key={it.id} item={it}/>
             
             ))}
             
