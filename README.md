@@ -3,6 +3,8 @@
 # Bienvenido a La boutique del aroma 👋
 _Este e-commerce es el proyecto final del curso de React JS de #CoderHouse. Se trata de una tienda online de productos de aromatización en la cual podrás ir navegando y agregando diferentes productos al carrito hasta que decidas finalizar la compra. Dentro de la vista del carrito podrás eliminar los productos que no desees o vaciarlo por completo. Para efectivamente realizar la compra, el último paso será completar los datos del formulario a través del cual quedarán registrados los datos de cada venta modificando el stock existente y generando un ID del pedido._
 
+_Podés recorrer la aplicación desde este [LINK](https://tienda-lbda.vercel.app/)_
+
 ## Como probar el proyecto en tu PC 💻
 
 _Puedes obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
