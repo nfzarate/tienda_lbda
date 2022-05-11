@@ -1,10 +1,12 @@
 import { useEffect , useState } from "react";
 import ItemList from "./ItemList";
 import ClipLoader from "react-spinners/ClipLoader";
-import "../css/ItemListContainer.css"
+import "../../css/ItemListContainer.css"
 import { useParams } from "react-router-dom";
-import {db} from "../firebase/firebase";
+import {db} from "../../firebase/firebase";
 import {getDocs,collection,query,where} from "firebase/firestore";
+import { Typography } from "@mui/material";
+import { Box } from "@mui/system";
 
 
 const ItemListContainer = ({greeting}) => {
@@ -59,8 +61,10 @@ const ItemListContainer = ({greeting}) => {
 
     return (
         <>
+        <Box sx={{display:'flex', justifyContent:'center', marginTop:'10px'}}>
+        <Typography sx={{fontSize:{xs:"20px", sm:'35px'},textAlign:'center'}}>{greeting}</Typography>
+        </Box>
 
-        <h2>{greeting}</h2>
         {loading ? 
 
         <div className="divPadre">

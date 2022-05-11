@@ -2,9 +2,9 @@ import React from 'react';
 import { useEffect , useState } from "react";
 import ItemDetail from './ItemDetail';
 import ClipLoader from "react-spinners/ClipLoader";
-import "../css/ItemListContainer.css";
+import "../../css/ItemListContainer.css";
 import {useParams} from "react-router-dom";
-import {db} from "../firebase/firebase";
+import {db} from "../../firebase/firebase";
 import {doc,getDoc,collection} from "firebase/firestore"
 
 

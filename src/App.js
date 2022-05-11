@@ -1,17 +1,18 @@
-import NavBar from "./components/NavBar";
-import ItemListContainer from "./components/ItemListContainer";
-import ItemDetailContainer from "./components/ItemDetailContainer";
-import {Cart} from "./components/Cart";
-import {Error} from "./components/Error";
-import CustomProvider from './context/CartContext';
+import NavBar from "../src/components/NavBar/NavBar";
+import ItemListContainer from "../src/containers/ItemList/ItemListContainer";
+import ItemDetailContainer from "../src/containers/ItemDetail/ItemDetailContainer";
+import {Cart} from "../src/components/Cart/Cart";
+import {Error} from "../src/components/Error/Error";
+import CustomProvider from '../src/context/CartContext';
 import { BrowserRouter,Routes,Route } from "react-router-dom";
 
 const App = () => {
 
-  const bienvenida = "Bienvenido a la tienda online de la boutique del aroma"
+  const bienvenida = "¡Bienvenido a la boutique del aroma!"
 
   return (
     <>
+
     < BrowserRouter>
 
       <CustomProvider>

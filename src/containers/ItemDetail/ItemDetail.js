@@ -1,7 +1,7 @@
 import React, {useState,useContext} from 'react';
-import {contexto} from '../context/CartContext';
-import ItemCount from "./ItemCount";
-import "../css/ItemDetail.css";
+import {contexto} from '../../context/CartContext';
+import ItemCount from "../../components/ItemCount/ItemCount";
+import "../../css/ItemDetail.css";
 import { Link } from "react-router-dom";
 
 
@@ -21,14 +21,17 @@ const ItemDetail = ({producto}) => {
   return (
   
     <div className="ItemDetailContainer">
+      <div className="ItemDetailData">
         <img src={producto.pictureUrl} alt={producto.title}></img> 
-        <div className="ItemDetailData">
-            <h1>{producto.title}</h1>
+        
+            <h2>{producto.title}</h2>
             <span>${producto.price}</span>
             <div className="Description">
-                <h3>Descripción</h3>
-                {producto.description}
+                <p>{producto.description}</p>
                 <p>Stock disponible: {producto.stock}</p>
+            </div>
+
+            <div>
 
                 {!finalizado
 

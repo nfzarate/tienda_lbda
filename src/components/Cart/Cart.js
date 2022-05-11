@@ -1,12 +1,12 @@
 
-import {contexto} from '../context/CartContext';
-import {FormularioCompra} from "./FormularioCompra";
 import React, {useContext,useState} from 'react';
-import '../css/cart.css'
+import {contexto} from '../../context/CartContext';
+import {FormularioCompra} from "../FormularioCompra/FormularioCompra";
+import '../../css/cart.css'
 import {Link } from "react-router-dom";
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import {addDoc,collection,serverTimestamp,updateDoc, doc} from "firebase/firestore";
-import {db} from "../firebase/firebase";
+import {db} from "../../firebase/firebase";
 
 
 export const Cart = () => {
@@ -64,21 +64,25 @@ const enviarPedido = (comprador) => {
       <div key={product.id}>
         <h4 className="productTitle">{product.title}</h4>
         <div className="divProducto">
+          <div className="cardContent">
           <img src={product.pictureUrl} alt="fotoProducto"></img>
           <div>
             <h4>Cantidad: {product.qty}</h4>
             <h4>Precio: ${product.price}</h4>
             <h4>Subotal: ${product.qty*product.price}</h4>
+            <button className="delete-btn" onClick={()=>{deleteItem(product.id)}}><DeleteOutlineIcon fontSize="medium"/></button>
           </div>
-          <button className="delete-btn" onClick={()=>{deleteItem(product.id)}}><DeleteOutlineIcon fontSize="medium"/></button>
+          </div>
         </div>
       </div>
       ))}
 
       <div className="pieCarrito">
-        <h4>Total: ${total}</h4>
+         <h4>Total: ${total}</h4>
+         <div className="div-btns">
          <button onClick={clearCart} className="vaciar-btn">Vaciar Carrito</button>
          <button className='btn-finalizar' onClick={mostrarFormulario}>Finalizar Compra</button>
+         </div>
       </div>
 
       </>
